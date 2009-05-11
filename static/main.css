@@ -1,0 +1,14 @@
+body {
+  font-family: Verdana, Helvetica, sans-serif;
+  background-color: #DDDDDD;
+}
+
+.title {
+  display: none;
+}
+
+p {
+  font-family: Verdana, Helvetica, sans-serif;
+  font-weight:normal;
+  font-size:14;
+}

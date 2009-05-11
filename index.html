@@ -1,0 +1,42 @@
+<head>
+  <link type="text/css" rel="static" href="/static/main.css" />
+</head>
+<html>
+  <body>
+
+	<h3>Oxford Collocations Dictionary<h3>
+    <form action="/search" method="post">
+      <div><input type="text" name="word"></div>
+      <div><input type="submit" value="search"></div>
+    </form>
+	
+  	<h3>Holman's Guest Book</h3>
+    {% for greeting in greetings %}
+      {% if greeting.author %}
+        <b>{{ greeting.author.nickname }}</b> wrote:
+      {% else %}
+       An anonymous person wrote:
+      {% endif %}
+      <blockquote>{{ greeting.content|escape }}</blockquote>
+    {% endfor %}
+
+    <form action="/sign" method="post">
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" value="Sign Guestbook"></div>
+    </form>
+
+    <a href="{{ url }}">{{ url_linktext }}</a>
+    <p>Email:yellowxi@gmail.com</p>
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-3944398-7");
+    pageTracker._trackPageview();
+    } catch(err) {}</script>
+    <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
+alt="Google App Engine 支持" />
+  </body>
+</html>
